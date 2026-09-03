@@ -971,6 +971,27 @@
     </style>
     <link href="css/site-theme.css" rel="stylesheet" />
     <script src="js/theme-boot.js"></script>
+
+<style>
+/* Visiting hours animated tag */
+.visiting-hours-tag{display:inline-flex;align-items:center;gap:8px;margin:8px 0 12px;padding:7px 16px;border-radius:999px;font-size:.82rem;font-weight:700;letter-spacing:.4px;color:#fff;background:linear-gradient(135deg,#083F43,#12787F);box-shadow:0 0 0 0 rgba(18,120,127,.55);animation:vhPulse 2s infinite;}
+.visiting-hours-tag i{animation:vhTick 2s linear infinite;}
+@keyframes vhPulse{0%{box-shadow:0 0 0 0 rgba(18,120,127,.55)}70%{box-shadow:0 0 0 14px rgba(18,120,127,0)}100%{box-shadow:0 0 0 0 rgba(18,120,127,0)}}
+@keyframes vhTick{0%{transform:rotate(0)}50%{transform:rotate(14deg)}100%{transform:rotate(0)}}
+/* Achievements */
+.achv-section{padding:70px 0;}
+.achv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;}
+.achv-card{position:relative;overflow:hidden;background:#fff;border:1px solid rgba(8,63,67,.12);border-radius:18px;padding:34px 26px;text-align:center;box-shadow:0 10px 30px rgba(8,63,67,.07);transition:transform .35s ease,box-shadow .35s ease;}
+.achv-card:hover{transform:translateY(-8px);box-shadow:0 18px 45px rgba(8,63,67,.16);}
+.achv-icon{width:66px;height:66px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,#083F43,#12787F);color:#fff;font-size:1.5rem;animation:achvBeat 1.8s ease-in-out infinite;}
+@keyframes achvBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.12)}40%{transform:scale(1)}}
+.achv-number{font-size:2.4rem;font-weight:800;color:#083F43;line-height:1;}
+.achv-label{margin-top:10px;font-size:1rem;font-weight:600;color:#12787F;}
+.achv-sub{margin-top:6px;font-size:.86rem;color:#6b7c7d;}
+/* Country flag chips */
+.country-chip{display:inline-flex;align-items:center;gap:8px;margin:0 8px 10px 0;padding:8px 16px;border-radius:999px;background:rgba(8,63,67,.07);border:1.5px solid rgba(8,63,67,.2);font-weight:600;font-size:.9rem;color:#083F43;}
+.country-chip .flag{font-size:1.15rem;line-height:1;}
+</style>
 </head>
 
 <body>
@@ -1036,7 +1057,9 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="contact-card h-100">
                         <div class="contact-card-icon"><i class="fas fa-hospital"></i></div>
-                        <h5>Chamber</h5>
+                        <h5>Consultation Center</h5>
+<span class="visiting-hours-tag"><i class="far fa-clock"></i> Visiting Hours: 8:00 AM – 4:00 PM</span>
+
                         <p class="mb-2"><strong>Ibrahim Cardiac Hospital &amp; Research Institute</strong></p>
                         <p class="mb-0 text-muted">122, Kazi Nazrul Islam Avenue, Shahbag, Dhaka-1000, Bangladesh</p>
                     </div>
@@ -1262,6 +1285,10 @@
                             MICS Heart Tumour Removal
                         </a>
 
+                        <a class="btn btn-link" href="service.html">
+                            Aortic Surgery - Aortic Aneurysm & Dissection
+                        </a>
+
 </div>
 
 
@@ -1299,12 +1326,14 @@
                     </div>
 
 
-                    <!-- Chamber Information -->
+                    <!-- Consultation Center Information -->
                     <div class="col-sm-12">
 
                         <h5 class="text-primary mb-4">
-                            Chamber Information
+                            Consultation Center Information
                         </h5>
+<span class="visiting-hours-tag"><i class="far fa-clock"></i> Visiting Hours: 8:00 AM – 4:00 PM</span>
+
 
 
                         <!-- Chamber 1 -->
