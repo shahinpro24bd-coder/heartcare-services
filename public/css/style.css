@@ -910,13 +910,13 @@ a.btn-sm-square i { font-size: 16px; }
     background: transparent !important;
 }
 
-/* Footer brand: keep logo + text responsive on mobile */
+/* Footer brand: new logo is a light-bg wordmark; show it on a white chip and
+   drop the redundant text span (the logo already carries the brand name). */
 .footer .navbar-brand { min-width: 0; max-width: 100%; }
-.footer .navbar-brand img { flex-shrink: 0; }
-.footer .footer-brand-text {
-    font-size: clamp(1.05rem, 3.2vw, 1.35rem) !important;
-    line-height: 1.25;
-    white-space: normal;
-    overflow-wrap: break-word;
-    min-width: 0;
+.footer .navbar-brand img {
+    flex-shrink: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 6px 10px;
 }
+.footer .navbar-brand > span { display: none; }
