@@ -2289,3 +2289,94 @@
     .rv-card, .rv-card * { transition: none !important; }
     .rv-card:hover::after { animation: none; }
 }
+
+/* ================= OUR ACHIEVEMENTS (animated) ================= */
+.achv-section {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 0;
+    background: linear-gradient(135deg, #083F43 0%, #0d5a5f 55%, #12787F 100%);
+}
+.achv-bg-pulse {
+    position: absolute;
+    inset: -40%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.06), transparent 40%);
+    animation: achv-drift 14s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes achv-drift {
+    from { transform: translate(-4%, -3%) scale(1); }
+    to   { transform: translate(4%, 3%) scale(1.08); }
+}
+.achv-title-script {
+    color: #ffd9d9 !important;
+}
+.achv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+}
+.achv-card {
+    position: relative;
+    text-align: center;
+    padding: 42px 24px 36px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+.achv-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.3);
+}
+.achv-icon {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    color: #fff;
+    background: linear-gradient(135deg, #e63956, #b3122f);
+    box-shadow: 0 0 0 0 rgba(230, 57, 86, 0.55);
+    animation: achv-heartbeat 1.8s ease-in-out infinite;
+}
+@keyframes achv-heartbeat {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 57, 86, 0.55); }
+    30% { transform: scale(1.12); }
+    45% { transform: scale(1); }
+    60% { transform: scale(1.08); box-shadow: 0 0 0 18px rgba(230, 57, 86, 0); }
+}
+.achv-number {
+    font-size: 2.9rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+}
+.achv-label {
+    margin-top: 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #ffe08a;
+    text-transform: uppercase;
+}
+.achv-sub {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+@media (max-width: 576px) {
+    .achv-section { padding: 60px 0; }
+    .achv-number { font-size: 2.3rem; }
+}
