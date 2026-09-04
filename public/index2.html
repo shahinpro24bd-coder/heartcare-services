@@ -95,6 +95,62 @@
 
 
     <!-- mics hero -->
+
+<!-- ================= OUR ACHIEVEMENTS ================= -->
+<div class="container-fluid achv-section">
+    <div class="achv-bg-pulse"></div>
+    <div class="container position-relative">
+        <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.1s">
+            <h1 class="font-dancing-script achv-title-script">Our Achievements</h1>
+            <h1 class="mb-3 text-white">Our Achievements</h1>
+        </div>
+        <div class="achv-grid">
+            <div class="achv-card wow zoomIn" data-wow-delay="0.1s">
+                <div class="achv-icon"><i class="fas fa-heart"></i></div>
+                <div class="achv-number"><span class="achv-count" data-target="20">0</span>+</div>
+                <div class="achv-label">Years Experience</div>
+                <div class="achv-sub">in Cardiac Surgery</div>
+            </div>
+            <div class="achv-card wow zoomIn" data-wow-delay="0.25s">
+                <div class="achv-icon"><i class="fas fa-heart-pulse"></i></div>
+                <div class="achv-number"><span class="achv-count" data-target="2500">0</span></div>
+                <div class="achv-label">Cardiac Surgeries</div>
+                <div class="achv-sub">Successfully performed</div>
+            </div>
+            <div class="achv-card wow zoomIn" data-wow-delay="0.4s">
+                <div class="achv-icon"><i class="fas fa-user-md"></i></div>
+                <div class="achv-number"><span class="achv-count" data-target="1000">0</span>+</div>
+                <div class="achv-label">MICS</div>
+                <div class="achv-sub">Minimally Invasive Cardiac Surgery</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+(function () {
+    var counters = document.querySelectorAll('.achv-count');
+    if (!counters.length) return;
+    var animate = function (el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var dur = 1800, start = null;
+        function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * eased).toLocaleString('en-US');
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    };
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+        });
+    }, { threshold: 0.4 });
+    counters.forEach(function (c) { io.observe(c); });
+})();
+</script>
+
     <section class="mics-hero" data-section="mics-hero">
         <div class="mics-hero__slides" data-hero-slider>
         <div class="mics-hero__slide is-active" data-hero-slide>
@@ -190,247 +246,7 @@
 
 
 
-        <!-- appointment -->
-    <div class="container-fluid py-5" style="background: #ffffff;">
-        <div class="container">
-            <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.1s">
-                <span class="d-inline-block px-4 py-2 mb-3 rounded-pill"
-                    style="background: rgba(8, 63, 67,0.12); color: var(--bs-primary); font-size: 0.78rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;">
-                    <i class="fas fa-calendar-check me-2"></i>Book Appointment
-                </span>
-                <h2 class="fw-bold mb-2" style="font-size: 2rem;">Reach Prof. Dr. Md. Rokonujjaman (Selim) — <span class="text-primary">MICS Cardiac Surgeon</span></h2>
-                <p class="text-muted mx-auto" style="max-width: 520px; font-size: 0.95rem;">
-                    Contact Prof. Dr. Selim for Minimally Invasive Cardiac Surgery, VSD/ASD closure, valve repair & replacement, CABG, and congenital cardiac surgery consultation.
-                </p>
-            </div>
-
-            <div class="row g-4 align-items-stretch">
-                <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me/8801711311200" target="_blank"
-                        class="appt-row d-flex align-items-center gap-3 p-3 mb-3 rounded-3 text-decoration-none"
-                        style="background:#fff; border-left:5px solid #25D366; box-shadow:0 3px 18px rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s;">
-                        <div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
-                            style="width:54px;height:54px;background:linear-gradient(135deg,#25D366,#128C7E);">
-                            <i class="fab fa-whatsapp text-white" style="font-size:1.5rem;"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div style="font-size:0.7rem;letter-spacing:1.2px;text-transform:uppercase;color:#999;font-weight:700;">WhatsApp</div>
-                            <div style="font-size:1.05rem;font-weight:700;color:#222;">+880 1711-311200</div>
-                        </div>
-                        <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
-                            style="width:30px;height:30px;background:rgba(37,211,102,0.1);">
-                            <i class="fas fa-chevron-right" style="font-size:0.7rem;color:#25D366;"></i>
-                        </span>
-                    </a>
-
-                    <!-- Call -->
-                    <a href="tel:+8801711311200"
-                        class="appt-row d-flex align-items-center gap-3 p-3 mb-3 rounded-3 text-decoration-none"
-                        style="background:#fff; border-left:5px solid var(--bs-primary); box-shadow:0 3px 18px rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s;">
-                        <div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
-                            style="width:54px;height:54px;background:linear-gradient(135deg,var(--bs-primary),#12787F);">
-                            <i class="fas fa-phone-alt text-white" style="font-size:1.25rem;"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div style="font-size:0.7rem;letter-spacing:1.2px;text-transform:uppercase;color:#999;font-weight:700;">Call Now</div>
-                            <div style="font-size:1.05rem;font-weight:700;color:#222;">+880 1711-311200</div>
-                        </div>
-                        <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
-                            style="width:30px;height:30px;background:rgba(8, 63, 67,0.1);">
-                            <i class="fas fa-chevron-right" style="font-size:0.7rem;color:var(--bs-primary);"></i>
-                        </span>
-                    </a>
-
-                    <!-- Email -->
-                    <a href="mailto:drselim74@gmail.com"
-                        class="appt-row d-flex align-items-center gap-3 p-3 mb-3 rounded-3 text-decoration-none"
-                        style="background:#fff; border-left:5px solid #EA4335; box-shadow:0 3px 18px rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s;">
-                        <div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
-                            style="width:54px;height:54px;background:linear-gradient(135deg,#EA4335,#FBBC04);">
-                            <i class="fas fa-envelope text-white" style="font-size:1.2rem;"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div style="font-size:0.7rem;letter-spacing:1.2px;text-transform:uppercase;color:#999;font-weight:700;">Email Us</div>
-                            <div style="font-size:0.9rem;font-weight:700;color:#222;">drselim74@gmail.com</div>
-                        </div>
-                        <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
-                            style="width:30px;height:30px;background:rgba(234,67,53,0.1);">
-                            <i class="fas fa-chevron-right" style="font-size:0.7rem;color:#EA4335;"></i>
-                        </span>
-                    </a>
-
-                    <!-- Facebook -->
-                    <a href="https://facebook.com/drselim74" target="_blank"
-                        class="appt-row d-flex align-items-center gap-3 p-3 mb-4 rounded-3 text-decoration-none"
-                        style="background:#fff; border-left:5px solid #1877F2; box-shadow:0 3px 18px rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s;">
-                        <div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
-                            style="width:54px;height:54px;background:linear-gradient(135deg,#1877F2,#42B2F5);">
-                            <i class="fab fa-facebook-f text-white" style="font-size:1.3rem;"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div style="font-size:0.7rem;letter-spacing:1.2px;text-transform:uppercase;color:#999;font-weight:700;">Follow on Facebook</div>
-                            <div style="font-size:1.05rem;font-weight:700;color:#222;">Dr. Selim - @drselim74</div>
-                        </div>
-                        <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
-                            style="width:30px;height:30px;background:rgba(24,119,242,0.1);">
-                            <i class="fas fa-chevron-right" style="font-size:0.7rem;color:#1877F2;"></i>
-                        </span>
-                    </a>
-
-                    <!-- Clinic Info Card -->
-                   <!-- Clinic Info Card -->
-<div class="rounded-3 overflow-hidden"
-    style="background:linear-gradient(135deg,#2a2a2a 0%,#3d3220 55%,#6b4f1a 100%);
-           box-shadow:0 10px 35px rgba(8, 63, 67, 0.28);">
-
-    <div class="p-4">
-
-        <!-- Card Header -->
-        <div class="d-flex align-items-center gap-2 mb-3">
-
-            <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
-                style="width:36px;
-                       height:36px;
-                       background:rgba(255,255,255,0.15);">
-
-                <i class="fas fa-hospital text-white"
-                    style="font-size:0.9rem;"></i>
-
-            </div>
-
-            <span class="text-white fw-bold"
-                style="font-size:1rem;
-                       letter-spacing:0.5px;">
-
-                Practice Locations
-
-            </span>
-
-        </div>
-
-
-        <!-- ========================= -->
-        <!-- Chamber -->
-        <!-- ========================= -->
-
-        <div class="d-flex align-items-start gap-2 mb-3">
-
-            <i class="fas fa-map-marker-alt mt-1 flex-shrink-0"
-                style="color:var(--bs-primary);
-                       font-size:0.85rem;">
-            </i>
-
-            <div>
-
-                <p class="mb-0 fw-semibold"
-                    style="color:#fff;
-                           font-size:0.9rem;">
-
-                    Ibrahim Cardiac Hospital & Research Institute
-
-                </p>
-
-                <p class="mb-0"
-                    style="color:rgba(255,255,255,0.65);
-                           font-size:0.82rem;">
-
-                    Appointment: +880 1711-311200
-
-                </p>
-
-                <p class="mb-0"
-                    style="color:rgba(255,255,255,0.65);
-                           font-size:0.82rem;">
-
-                    122, Kazi Nazrul Islam Avenue, Shahbag, Dhaka-1000
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ========================= -->
-        <!-- Appointment & Consultation -->
-        <!-- ========================= -->
-
-        <div class="d-flex align-items-start gap-2 mb-3">
-
-            <i class="fas fa-phone-alt mt-1 flex-shrink-0"
-                style="color:var(--bs-primary);
-                       font-size:0.85rem;">
-            </i>
-
-            <div>
-
-                <p class="mb-0 fw-semibold"
-                    style="color:#fff;
-                           font-size:0.9rem;">
-
-                    Appointment & Consultation
-
-                </p>
-
-                <p class="mb-0"
-                    style="color:rgba(255,255,255,0.65);
-                           font-size:0.82rem;">
-
-                    +880 1711-311200 (Phone / WhatsApp)
-
-                </p>
-
-                <p class="mb-0"
-                    style="color:rgba(255,255,255,0.65);
-                           font-size:0.82rem;">
-
-                    Email: drselim74@gmail.com
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ========================= -->
-        <!-- Appointment Button -->
-        <!-- ========================= -->
-
-        <a href="contact2.html"
-            target="_blank"
-            class="btn btn-sm fw-bold px-4 py-2"
-            style="background:rgba(255,255,255,0.12);
-                   color:#fff;
-                   border:1.5px solid rgba(255,255,255,0.35);
-                   letter-spacing:0.5px;">
-
-            <i class="fas fa-calendar me-2"></i>
-
-            Book Online Appointment
-
-        </a>
-
-    </div>
-
-</div>
-                </div>
-
-                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">
-                    <div class="rounded-3 overflow-hidden h-100"
-                        style="min-height:530px;box-shadow:0 12px 45px rgba(0,0,0,0.1);border:3px solid rgba(8, 63, 67,0.2);">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4531.6256598450855!2d90.40928799999999!3d23.7499048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b888968bdc57%3A0xf9966fabef79f0a8!2sDhaka%20Community%20Medical%20College%20and%20Hospital!5e1!3m2!1sen!2sbd!4v1785246334609!5m2!1sen!2sbd" width="100%"
-                            height="100%" style="border:0;min-height:530px;display:block;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            title="Prof. Dr. Md. Rokonujjaman (Selim) - Ibrahim Cardiac Hospital & Research Institute">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- appointment -->
+        
 
 
 
@@ -556,17 +372,17 @@
                 </div>
             </div>
 
-            <!-- 2. MICS VSD Closure -->
+            <!-- 2. Open Heart Surgery -->
             <div class="ser7">
                 <div class="ser8">
-                    <div class="ser9" style="background-image: url('img/service-vsd.jpg');"></div>
+                    <div class="ser9" style="background-image: url('img/surgery-10.jpg');"></div>
                 </div>
                 <div class="ser10">
-                    <div class="ser11">MICS VSD Closure</div>
+                    <div class="ser11">Open Heart Surgery</div>
                     <div class="ser12"></div>
-                    <div class="ser13">Ventricular Septal Defect closure — Bangladesh's first MICS VSD closure surgery; highest volume of MICS VSD closures in Bangladesh.</div>
+                    <div class="ser13">Conventional open-heart surgery via median sternotomy for complex cardiac conditions requiring full access to the heart.</div>
                     <div class="ser14">
-                        <div class="ser15">বাংলাদেশে প্রথম MICS VSD closure surgery এবং সর্বোচ্চ সংখ্যক MICS VSD closure surgery-র অভিজ্ঞতা।</div>
+                        <div class="ser15">জটিল হৃদরোগের ক্ষেত্রে median sternotomy-এর মাধ্যমে প্রচলিত open-heart সার্জারি করা হয়।</div>
                     </div>
                     <div class="ser16" onclick="toggleCard(this)">
                         <div class="ser17">Read More</div>
@@ -575,7 +391,64 @@
                 </div>
             </div>
 
-            <!-- 3. MICS ASD Closure -->
+            <!-- 3. MICS CABG – MIDCAB -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/service-cabg.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">MICS CABG – MIDCAB</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Including off-pump CABG and MIDCAB via a small left thoracic incision for suitable LAD disease.</div>
+                    <div class="ser14">
+                        <div class="ser15">উপযুক্ত LAD disease-এ ছোট বাম thoracic incision দিয়ে MIDCAB সহ off-pump CABG।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Total Arterial CABG -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/surgery-11.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">Total Arterial CABG</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Coronary bypass using only arterial grafts (LIMA/RIMA/radial) for superior long-term patency and outcomes.</div>
+                    <div class="ser14">
+                        <div class="ser15">শুধুমাত্র arterial graft (LIMA/RIMA/radial) ব্যবহার করে coronary bypass, যা দীর্ঘমেয়াদে ভালো ফলাফল দেয়।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. MICS Valve Surgery -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/service-mitral.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">MICS Valve Surgery</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">MICS mitral valve repair/replacement via a right-sided mini thoracotomy, avoiding full sternotomy in selected patients.</div>
+                    <div class="ser14">
+                        <div class="ser15">নির্বাচিত রোগীতে বুকের ডান পাশে ছোট incision দিয়ে mitral valve repair/replacement, full sternotomy এড়ানো সম্ভব।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. MICS ASD Closure -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-asd.jpg');"></div>
@@ -594,7 +467,102 @@
                 </div>
             </div>
 
-            <!-- 4. PDA Ligation / Division -->
+            <!-- 7. MICS VSD Closure -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/service-vsd.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">MICS VSD Closure</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Ventricular Septal Defect closure — Bangladesh's first MICS VSD closure surgery; highest volume of MICS VSD closures in Bangladesh.</div>
+                    <div class="ser14">
+                        <div class="ser15">বাংলাদেশে প্রথম MICS VSD closure surgery এবং সর্বোচ্চ সংখ্যক MICS VSD closure surgery-র অভিজ্ঞতা।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. MICS Heart Tumour Removal -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/service-myxoma.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">MICS Heart Tumour Removal</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Surgical excision of atrial myxoma and other cardiac tumours; select cases via small thoracic incision.</div>
+                    <div class="ser14">
+                        <div class="ser15">Atrial myxoma সহ cardiac tumour-এর surgical excision; নির্বাচিত ক্ষেত্রে ছোট thoracic incision দিয়ে।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Aortic Aneurysm Repair -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/surgery-14.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">Aortic Aneurysm Repair</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Surgical repair of aortic aneurysm — replacement of the dilated aortic segment with a graft to prevent rupture.</div>
+                    <div class="ser14">
+                        <div class="ser15">Aortic aneurysm-এর surgical repair — প্রসারিত aorta-র অংশ graft দিয়ে প্রতিস্থাপন করে rupture প্রতিরোধ করা হয়।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Aortic Dissection Repair -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/icu-3.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">Aortic Dissection Repair</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Emergency surgical repair of aortic dissection to restore blood flow and prevent life-threatening complications.</div>
+                    <div class="ser14">
+                        <div class="ser15">Aortic dissection-এর জরুরি surgical repair, যা রক্তপ্রবাহ পুনরুদ্ধার এবং প্রাণঘাতী জটিলতা প্রতিরোধ করে।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Repair of Coarctation of Aorta -->
+            <div class="ser7">
+                <div class="ser8">
+                    <div class="ser9" style="background-image: url('img/icu-4.jpg');"></div>
+                </div>
+                <div class="ser10">
+                    <div class="ser11">Repair of Coarctation of Aorta</div>
+                    <div class="ser12"></div>
+                    <div class="ser13">Surgical correction of aortic coarctation (narrowing of the aorta) in children and adults.</div>
+                    <div class="ser14">
+                        <div class="ser15">শিশু ও প্রাপ্তবয়স্কদের aorta-র সংকীর্ণতা (coarctation of aorta)-এর surgical সংশোধন।</div>
+                    </div>
+                    <div class="ser16" onclick="toggleCard(this)">
+                        <div class="ser17">Read More</div>
+                        <div class="ser18"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. PDA Ligation / Division -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-pda.jpg');"></div>
@@ -613,26 +581,7 @@
                 </div>
             </div>
 
-            <!-- 5. Mitral Valve Repair & Replacement -->
-            <div class="ser7">
-                <div class="ser8">
-                    <div class="ser9" style="background-image: url('img/service-mitral.jpg');"></div>
-                </div>
-                <div class="ser10">
-                    <div class="ser11">Mitral Valve Repair & Replacement</div>
-                    <div class="ser12"></div>
-                    <div class="ser13">MICS mitral valve repair/replacement via a right-sided mini thoracotomy, avoiding full sternotomy in selected patients.</div>
-                    <div class="ser14">
-                        <div class="ser15">নির্বাচিত রোগীতে বুকের ডান পাশে ছোট incision দিয়ে mitral valve repair/replacement, full sternotomy এড়ানো সম্ভব।</div>
-                    </div>
-                    <div class="ser16" onclick="toggleCard(this)">
-                        <div class="ser17">Read More</div>
-                        <div class="ser18"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Aortic Valve Replacement -->
+            <!-- 13. Aortic Valve Replacement -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-aortic.jpg');"></div>
@@ -651,45 +600,7 @@
                 </div>
             </div>
 
-            <!-- 7. Coronary Artery Bypass Grafting (CABG) -->
-            <div class="ser7">
-                <div class="ser8">
-                    <div class="ser9" style="background-image: url('img/service-cabg.jpg');"></div>
-                </div>
-                <div class="ser10">
-                    <div class="ser11">Coronary Artery Bypass Grafting (CABG)</div>
-                    <div class="ser12"></div>
-                    <div class="ser13">Including off-pump CABG and MIDCAB via a small left thoracic incision for suitable LAD disease.</div>
-                    <div class="ser14">
-                        <div class="ser15">উপযুক্ত LAD disease-এ ছোট বাম thoracic incision দিয়ে MIDCAB সহ off-pump CABG।</div>
-                    </div>
-                    <div class="ser16" onclick="toggleCard(this)">
-                        <div class="ser17">Read More</div>
-                        <div class="ser18"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 8. Atrial Myxoma / Cardiac Tumour Excision -->
-            <div class="ser7">
-                <div class="ser8">
-                    <div class="ser9" style="background-image: url('img/service-myxoma.jpg');"></div>
-                </div>
-                <div class="ser10">
-                    <div class="ser11">Atrial Myxoma / Cardiac Tumour Excision</div>
-                    <div class="ser12"></div>
-                    <div class="ser13">Surgical excision of atrial myxoma and other cardiac tumours; select cases via small thoracic incision.</div>
-                    <div class="ser14">
-                        <div class="ser15">Atrial myxoma সহ cardiac tumour-এর surgical excision; নির্বাচিত ক্ষেত্রে ছোট thoracic incision দিয়ে।</div>
-                    </div>
-                    <div class="ser16" onclick="toggleCard(this)">
-                        <div class="ser17">Read More</div>
-                        <div class="ser18"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 9. Congenital Cardiac Surgery -->
+            <!-- 14. Congenital Cardiac Surgery -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-congenital.jpg');"></div>
@@ -708,7 +619,7 @@
                 </div>
             </div>
 
-            <!-- 10. Adult & Pediatric Cardiac Surgery -->
+            <!-- 15. Adult & Pediatric Cardiac Surgery -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-adult-pediatric.jpg');"></div>
@@ -727,7 +638,7 @@
                 </div>
             </div>
 
-            <!-- 11. Valve Assessment & Surgical Planning -->
+            <!-- 16. Valve Assessment & Surgical Planning -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-assessment.jpg');"></div>
@@ -746,6 +657,7 @@
                 </div>
             </div>
 
+            <!-- 17. Post-operative Cardiac ICU Care -->
             <!-- 12. Post-operative Cardiac ICU Care -->
             <div class="ser7">
                 <div class="ser8">
@@ -765,7 +677,7 @@
                 </div>
             </div>
 
-            <!-- 13. Second Opinion for Cardiac Surgery -->
+            <!-- 18. Second Opinion for Cardiac Surgery -->
             <div class="ser7">
                 <div class="ser8">
                     <div class="ser9" style="background-image: url('img/service-second-opinion.jpg');"></div>
@@ -785,7 +697,8 @@
             </div>
 
         </div>
-    </div>
+    
+        </div>
 
 <!-- services -->
     <!-- MICS vs conventional comparison -->
@@ -1395,36 +1308,6 @@
 
 
 
-
-<!-- ================= OUR ACHIEVEMENTS ================= -->
-<div class="container-fluid achv-section bg-light">
-    <div class="container">
-        <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.1s">
-            <h1 class="font-dancing-script text-primary">Our Achievements</h1>
-            <h1 class="mb-3">Our Achievements</h1>
-        </div>
-        <div class="achv-grid">
-            <div class="achv-card wow fadeInUp" data-wow-delay="0.1s">
-                <div class="achv-icon"><i class="fas fa-heart"></i></div>
-                <div class="achv-number">20+</div>
-                <div class="achv-label">Years Experience</div>
-                <div class="achv-sub">in Cardiac Surgery</div>
-            </div>
-            <div class="achv-card wow fadeInUp" data-wow-delay="0.2s">
-                <div class="achv-icon"><i class="fas fa-heart-pulse"></i></div>
-                <div class="achv-number">2500</div>
-                <div class="achv-label">Cardiac Surgeries</div>
-                <div class="achv-sub">Successfully performed</div>
-            </div>
-            <div class="achv-card wow fadeInUp" data-wow-delay="0.3s">
-                <div class="achv-icon"><i class="fas fa-user-md"></i></div>
-                <div class="achv-number">1000+</div>
-                <div class="achv-label">MICS</div>
-                <div class="achv-sub">Minimally Invasive Cardiac Surgery</div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- ================= CHAMBERS SECTION ================= -->
 
